@@ -1,4 +1,5 @@
-import * as firebase from "firebase/app";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 // 웹앱 Firebase 환경 설정
 const firebaseConfig = {
@@ -10,4 +11,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-export default firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+
+// Auth 부분만 export 하기
+export const authService = getAuth();
